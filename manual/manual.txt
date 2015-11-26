@@ -1,0 +1,25 @@
+pip install --upgrade pip 
+pip install ipython[notebook]
+pip install nltk
+
+brew install mecab
+brew install mecab-ipadic
+
+wget https://mecab.googlecode.com/files/mecab-python-0.996.tar.gz
+tar zxvf mecab-python-0.996.tar.gz
+cd mecab-python
+2to3 setup.py -W
+
+vi setup.py
+
+    # 変更前
+    #def cmd2(str):
+    #    return string.split (cmd1(str))
+
+    # 変更後
+    def cmd2(str):
+        return cmd1(str).split()
+
+python setup.py build
+python setup.py install
+
